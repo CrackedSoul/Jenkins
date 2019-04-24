@@ -36,8 +36,6 @@ pipeline {
 						
 						构建编号：${BUILD_NUMBER}<br/><hr/>
 						
-						svn版本号：${SVN_REVISION}<br/><hr/>
-						
 						触发原因：${CAUSE}<br/><hr/>
 						
 						构建日志地址：<a href=\"${BUILD_URL}console\">${BUILD_URL}console</a><br/><hr/>
