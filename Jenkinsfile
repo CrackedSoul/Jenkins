@@ -25,7 +25,7 @@ pipeline {
     	emailext (
                 subject: "${JOB_NAME} - Build # ${BUILD_NUMBER} - ",
                 body: """
-		               $DEFAULT_CONTENT
+		              ${BUILD_NUMBER}
 
                 """,
                 to: "huangyulong@mastercom.cn",  
