@@ -21,11 +21,16 @@ pipeline {
         }
     }
     post{
-    	always {
+    	failure {
     	emailext (
-    		body: '${JOB_NAME} [${BUILD_NUMBER}] 构建结果', 
-    		recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], 
-    		subject: '${JOB_NAME} [${BUILD_NUMBER}] 构建结果',   
+    		body: """
+    			${JOB_NAME}- Build #${BUILD_NUMBER} Construction Result
+    			BUILD_URL: $BUILD_URL
+    			JOB_URL:$JOB_URL
+    			LogInfo:$BUILD_URLconsole
+    		""", 
+    		recipientProviders: [[$class: 'DevelopersRecipientProvider']], 
+    		subject: '${JOB_NAME}- Build #${BUILD_NUMBER} Construction Result',   
     		to: 'huangyulong@mastercom.cn'
 			)
 		}
