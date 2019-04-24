@@ -25,17 +25,7 @@ pipeline {
     	emailext (
                 subject: "${JOB_NAME} - Build # ${BUILD_NUMBER} - ",
                 body: """
-		                ${JOB_NAME} - Build # ${BUILD_NUMBER} - :
-
-						Check console output at $BUILD_URL to view the results.
-						<hr/>
-						$ENV
-						
-						(本邮件是程序自动下发的，请勿回复！)<br/><hr/>
-						
-						项目名称：${JOB_NAME}<br/><hr/>
-						
-						构建编号：${BUILD_NUMBER}<br/><hr/>
+		               $DEFAULT_CONTENT
 
                 """,
                 to: "huangyulong@mastercom.cn",  
