@@ -36,8 +36,6 @@ pipeline {
 						
 						构建编号：${BUILD_NUMBER}<br/><hr/>
 						
-						触发原因：${CAUSE}<br/><hr/>
-						
 						构建日志地址：<a href=\"${BUILD_URL}console\">${BUILD_URL}console</a><br/><hr/>
 						
 						构建地址：<a href=\"${BUILDURL}\">${BUILD_URL}</a><br/><hr/>
