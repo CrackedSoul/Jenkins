@@ -25,9 +25,9 @@ pipeline {
     	emailext (
     		body: """
     			${JOB_NAME}- Build #${BUILD_NUMBER} Construction Result
-    			BUILD_URL: $BUILD_URL
+    			BUILD_URL: ${env.BUILD_URL}
     			JOB_URL:$JOB_URL
-    			LogInfo:$BUILD_URLconsole
+    			LogInfo:${env.BUILD_URL}console
     		""", 
     		recipientProviders: [[$class: 'DevelopersRecipientProvider']], 
     		subject: '${JOB_NAME}- Build #${BUILD_NUMBER} Construction Result',   
