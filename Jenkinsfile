@@ -28,6 +28,7 @@ pipeline {
     			BUILD_URL: ${env.BUILD_URL}</br>
     			JOB_URL:$JOB_URL</br>
     			LogInfo:${env.BUILD_URL}console</br>
+    			{env}
     		""", 
     		recipientProviders: [[$class: 'DevelopersRecipientProvider']], 
     		subject: '${JOB_NAME}- Build #${BUILD_NUMBER} Construction Result',   
