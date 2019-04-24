@@ -27,7 +27,7 @@ pipeline {
                 body: """
 		              ${BUILD_NUMBER}
 		              ${JOB_NAME}
-		              ${JOB_DESCRIPTION}
+		              ${CHANGES} 
 
                 """,
                 to: "huangyulong@mastercom.cn",  
