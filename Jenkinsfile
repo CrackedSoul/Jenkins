@@ -23,28 +23,28 @@ pipeline {
     post{
     	always {
     	emailext (
-                subject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!",
+                subject: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}!",
                 body: """
-		                $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+		                ${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}:
 
 						Check console output at $BUILD_URL to view the results.
 						<hr/>
 						
 						(本邮件是程序自动下发的，请勿回复！)<br/><hr/>
 						
-						项目名称：$PROJECT_NAME<br/><hr/>
+						项目名称：${PROJECT_NAME}<br/><hr/>
 						
-						构建编号：$BUILD_NUMBER<br/><hr/>
+						构建编号：${BUILD_NUMBER}<br/><hr/>
 						
 						svn版本号：${SVN_REVISION}<br/><hr/>
 						
-						构建状态：$BUILD_STATUS<br/><hr/>
+						构建状态：${BUILD_STATUS}<br/><hr/>
 						
 						触发原因：${CAUSE}<br/><hr/>
 						
-						构建日志地址：<a href=\"${BUILD_URL}console\">{BUILD_URL}console</a><br/><hr/>
+						构建日志地址：<a href=\"${BUILD_URL}console\">${BUILD_URL}console</a><br/><hr/>
 						
-						构建地址：<a href=\"${BUILDURL}\">BUILD_URL</a><br/><hr/>
+						构建地址：<a href=\"${BUILDURL}\">${BUILD_URL}</a><br/><hr/>
 
                 """,
                 to: "huangyulong@mastercom.cn",  
