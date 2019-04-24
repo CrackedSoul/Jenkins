@@ -24,11 +24,10 @@ pipeline {
     	failure {
     	emailext (
     		body: """
-    			${JOB_NAME}- Build #${BUILD_NUMBER} ${env.BUILD_STATUS}!</br>
-    			BUILD_URL: ${env.BUILD_URL}</br>
-    			JOB_URL:$JOB_URL</br>
-    			LogInfo:${env.BUILD_URL}console</br>
-    			${env}
+    				${JOB_NAME}- Build #${BUILD_NUMBER} ${env.BUILD_STATUS}!</br>
+	    			BUILD_URL: <a href=\"${env.BUILD_URL}\">${env.BUILD_URL}</a></br>
+	    			JOB_URL:<a href=\"$JOB_URL\">$JOB_URL</br>
+	    			LogInfo: <a href=\"${env.BUILD_URL}console\">${env.BUILD_URL}console</br>
     		""", 
     		recipientProviders: [[$class: 'DevelopersRecipientProvider']], 
     		subject: '${JOB_NAME}- Build #${BUILD_NUMBER} Construction Result',   
