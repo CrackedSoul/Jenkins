@@ -10,7 +10,7 @@ pipeline {
             }
             steps {
                 echo 'Hello Maven..'
-                sh 'mvn -v'
+                sh 'mvn fasfav'
             }
         } 
         stage('Stage2') {           
