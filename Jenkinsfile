@@ -26,6 +26,7 @@ pipeline {
                 subject: "${JOB_NAME} - Build # ${BUILD_NUMBER} - ",
                 body: """
 		              ${BUILD_NUMBER}
+		              ${JOB_NAME}
 
                 """,
                 to: "huangyulong@mastercom.cn",  
