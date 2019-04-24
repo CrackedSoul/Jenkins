@@ -22,7 +22,12 @@ pipeline {
     }
     post{
     	always {
-    	step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: "huangyulong@mastercom.cn",sendToIndividuals: true])
-    	}
+    	emailext (
+    		body: '${JOB_NAME} [${BUILD_NUMBER}] 构建结果', 
+    		recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], 
+    		subject: '${JOB_NAME} [${BUILD_NUMBER}] 构建结果',   
+    		to: 'huangyulong@mastercom.cn'
+			)
+		}
     }
 }
