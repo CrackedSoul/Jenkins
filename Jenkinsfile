@@ -23,16 +23,16 @@ pipeline {
     post{
     	always {
     	emailext (
-                subject: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}!",
+                subject: "${JOB_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}!",
                 body: """
-		                ${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}:
+		                ${JOB_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}:
 
 						Check console output at $BUILD_URL to view the results.
 						<hr/>
 						
 						(本邮件是程序自动下发的，请勿回复！)<br/><hr/>
 						
-						项目名称：${PROJECT_NAME}<br/><hr/>
+						项目名称：${JOB_NAME}<br/><hr/>
 						
 						构建编号：${BUILD_NUMBER}<br/><hr/>
 						
