@@ -29,6 +29,7 @@ pipeline {
 
 						Check console output at $BUILD_URL to view the results.
 						<hr/>
+						${ENV}
 						
 						(本邮件是程序自动下发的，请勿回复！)<br/><hr/>
 						
