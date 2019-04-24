@@ -23,9 +23,9 @@ pipeline {
     post{
     	always {
     	emailext (
-                subject: "${JOB_NAME} - Build # ${BUILD_NUMBER} - $BUILD_STATUS!",
+                subject: "${JOB_NAME} - Build # ${BUILD_NUMBER} - ",
                 body: """
-		                ${JOB_NAME} - Build # ${BUILD_NUMBER} - $BUILD_STATUS:
+		                ${JOB_NAME} - Build # ${BUILD_NUMBER} - :
 
 						Check console output at $BUILD_URL to view the results.
 						<hr/>
@@ -37,8 +37,6 @@ pipeline {
 						构建编号：${BUILD_NUMBER}<br/><hr/>
 						
 						svn版本号：${SVN_REVISION}<br/><hr/>
-						
-						构建状态：$BUILD_STATUS<br/><hr/>
 						
 						触发原因：${CAUSE}<br/><hr/>
 						
