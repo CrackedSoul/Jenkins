@@ -10,19 +10,20 @@ pipeline {
             }
             steps {
                 echo 'Hello Maven..'
-                sh 'mvn vdadsda'
+                sh 'mvn -v'
             }
         } 
         stage('Stage2') {           
             steps {
                 echo 'Hello, Stage2.'
+                sh 'docker images'
             }
         }
     }
     post{
-    	success {
+    	always {
     	emailext (
-                subject: "'${JOB_NAME} [${BUILD_NUMBER}]' 更新正常",
+                subject: "'${JOB_NAME} [${BUILD_NUMBER}]'构建完成",
                 body: """
 		                详情：
 		                SUCCESSFUL: Job '${JOB_NAME} [${BUILD_NUMBER}]'
