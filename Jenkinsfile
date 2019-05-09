@@ -14,7 +14,7 @@ pipeline {
         }
         stage("FtpUpload"){
         	steps{
-        		ftpPublisher alwaysPublishFromMaster: false,masterNodeName:null, paramPublish:null,continueOnError: false, failOnError: false, publishers: [[configName: 'FtpTest', transfers: [[asciiMode: false, cleanRemote: false, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '',sourceFiles: 'test/*']], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false]]
+        		ftpPublisher alwaysPublishFromMaster: false,masterNodeName:null, paramPublish:null,continueOnError: false, failOnError: false, publishers: [[configName: 'FtpTest', transfers: [[asciiMode: false, cleanRemote: false, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '',sourceFiles: 'test/**']], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false]]
         	}
         }
     }
