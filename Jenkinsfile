@@ -19,6 +19,11 @@ pipeline {
                 sh 'docker images'
             }
         }
+        stage("FtpUpload"){
+        	steps{
+        		ftpPublisher alwaysPublishFromMaster: false, continueOnError: false, failOnError: false, publishers: [[configName: 'FtpTest', transfers: [[asciiMode: false, cleanRemote: false, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/', remoteDirectorySDF: false, removePrefix: '/', sourceFiles: 'source.txt']], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false]]
+        	}
+        }
     }
     post{
     	failure {
